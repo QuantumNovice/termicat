@@ -16,6 +16,13 @@ import platform
 
 
 # image = load_image('test.jpg')
+def terminal_size():
+    import fcntl, termios, struct
+
+    h, w, hp, wp = struct.unpack(
+        "HHHH", fcntl.ioctl(0, termios.TIOCGWINSZ, struct.pack("HHHH", 0, 0, 0, 0))
+    )
+    return w, h
 
 
 def termicat(img):
@@ -23,8 +30,7 @@ def termicat(img):
     if platform.system() == "Windows":
         w, h = os.get_terminal_size()
     if platform.system() == "Linux":
-        w, h = os.popen("stty size", "r").read().split()
-        w, h = int(w), int(h)
+        w, h = terminal_size()
 
     sf = min(w, h)
     res = cv2.resize(img, dsize=(sf, sf), interpolation=cv2.INTER_CUBIC)
