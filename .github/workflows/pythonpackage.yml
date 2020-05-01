@@ -45,3 +45,7 @@ jobs:
       run: |
         python freeze.py build -b freeze
         ls freeze
+    - name: cythonize
+      run: |
+        python compile.py build_ext --inplace
+        

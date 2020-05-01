@@ -6,6 +6,7 @@ import cv2
 import os
 import sys
 import time
+import platform
 
 # def load_image( infilename ) :
 #     img = Image.open( infilename )
@@ -19,7 +20,12 @@ import time
 
 def termicat(img):
     img = cv2.imread(img)
-    w, h = os.get_terminal_size()
+    if platform.system() == "Windows":
+        w, h = os.get_terminal_size()
+    if platform.system() == "Linux":
+        w, h = os.popen("stty size", "r").read().split()
+        w, h = int(w), int(h)
+
     sf = min(w, h)
     res = cv2.resize(img, dsize=(sf, sf), interpolation=cv2.INTER_CUBIC)
 
