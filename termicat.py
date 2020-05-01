@@ -30,8 +30,10 @@ def termicat(img):
     if platform.system() == "Windows":
         w, h = os.get_terminal_size()
     if platform.system() == "Linux":
-        w, h = terminal_size()
-
+        try:
+            w, h = terminal_size()
+        except OSError:
+            w, h = 300, 100
     sf = min(w, h)
     res = cv2.resize(img, dsize=(sf, sf), interpolation=cv2.INTER_CUBIC)
 
