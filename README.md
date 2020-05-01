@@ -2,16 +2,16 @@
 
 
 # Usage
-termicat img1 img2 ...
+`termicat img1 img2 ...`
 
 # Python
-py termicat.pyc
-py termicat.py
+`py termicat.pyc`
+`py termicat.py`
 
 # Compilation
-freeze.bat
-py-installer.bat
+`freeze.bat`
+`py-installer.bat`
 
 # C file
-build2.bat
-build.bat
+`build2.bat`
+`build.bat`
