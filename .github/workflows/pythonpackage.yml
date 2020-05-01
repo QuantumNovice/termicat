@@ -40,7 +40,7 @@ jobs:
     - name: PyInstaller
       run: |
         pyinstaller termicat.py --hidden-import="pkg_resources.py2_warn"
-        dist/termicat/termicat
+        dist/termicat/termicat ../../images/pacman.jpg
     - name: cx_Freeze
       run: |
         python freeze.py build -b freeze
@@ -48,4 +48,3 @@ jobs:
     - name: cythonize
       run: |
         python compile.py build_ext --inplace
-        
