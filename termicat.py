@@ -35,7 +35,7 @@ def termicat(img):
         except OSError:
             w, h = 300, 100
     sf = min(w, h)
-    res = cv2.resize(img, dsize=(sf, sf), interpolation=cv2.INTER_CUBIC)
+    res = cv2.resize(img, dsize=(sf * 2, sf), interpolation=cv2.INTER_CUBIC)
 
     for i, pixel_line in enumerate(res):
         str = ""
