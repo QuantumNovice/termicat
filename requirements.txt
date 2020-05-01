@@ -1,3 +1,6 @@
 colr
 numpy
 opencv-python
+pyinstaller
+cx_Freeze
+py2exe
