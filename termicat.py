@@ -1,5 +1,6 @@
 # import numpy as np
 # from PIL import Image
+import numpy.core.multiarray
 from colr import Colr as C
 import cv2
 import os
