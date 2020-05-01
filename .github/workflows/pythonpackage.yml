@@ -37,7 +37,7 @@ jobs:
     - name: Test with pytest
       run: |
         python termicat.py
-    - name: build
+    - name: Build for Ubuntu
       run: |
         pyinstaller termicat.py --hidden-import="pkg_resources.py2_warn"
-        dist/termicat/termicat
+        dist/termicat/termicat ../../images/pacman.jpg
