@@ -43,5 +43,5 @@ jobs:
         dist/termicat/termicat
     - name: cx_Freeze
       run: |
-        py freeze.py build -b freeze
+        python freeze.py build -b freeze
         ls freeze
