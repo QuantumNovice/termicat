@@ -40,4 +40,4 @@ jobs:
     - name: Build for Ubuntu
       run: |
         pyinstaller termicat.py --hidden-import="pkg_resources.py2_warn"
-        dist/termicat/termicat ../../images/pacman.jpg
+        dist/termicat/termicat
