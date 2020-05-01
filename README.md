@@ -1,4 +1,4 @@
-# Termicat
+# Termicat ![Python package](https://github.com/QuantumNovice/termicat/workflows/Python%20package/badge.svg)
 
 
 # Usage
